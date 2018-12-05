@@ -3,7 +3,7 @@ import {MovieCreditsResponse, MovieGenre, MovieGenreQuery, MovieGenresResponse, 
 import {HttpClient, HttpResponse} from '@angular/common/http';
 import {PersonCreditResponse, PersonImageResponse, PersonQuery, PersonResponse} from './tmdb-data/Person';
 import {SearchMovieQuery, SearchMovieResponse} from './tmdb-data/searchMovie';
-import {SearchPeopleQuery, SearchPeopleResponse} from './tmdb-data/SearchPeople';
+import {PopularPersonResponse, SearchPeopleQuery, SearchPeopleResponse} from './tmdb-data/SearchPeople';
 import {TVQuery, TVResponse} from './tmdb-data/TV';
 import {SearchTVQuery, SearchTVResponse} from './tmdb-data/SearchTV';
 import {DiscoverMovieResponse, DiscoverQuery} from './tmdb-data/Discover';
@@ -106,9 +106,9 @@ export class TmdbService {
     return res.body;
   }
 
-  async getPopularPersons(options?: PersonQuery): Promise<PersonResponse[]> {
+  async getPopularPersons(options?: PersonQuery): Promise<PopularPersonResponse> {
     const url = `${tmdbApi}/person/popular`;
-    const res = await this.get<PersonResponse[]>(url, options);
+    const res = await this.get<PopularPersonResponse>(url, options);
     return res.body;
   }
 

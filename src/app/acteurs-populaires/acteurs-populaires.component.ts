@@ -14,13 +14,13 @@ export class ActeursPopulairesComponent implements OnInit {
 
   constructor(private routeur: Router,
               private route: ActivatedRoute,
-              private tmdb: TmdbService) { }
+              public tmdb: TmdbService) { }
 
 
   ngOnInit() {
 
     this.tmdb.getPopularPersons().then( res => {
-      this.personList = res;
+      this.personList = res.results;
     });
 
   }

@@ -6,8 +6,7 @@
     <mat-card>
       <mat-card-content>
         <a [routerLink]="['/actor/'+p.id]" >
-        <!-- TODO: tiny poster d'un acteur
-        <img src="{{getTinyPoster(p.profile_path)}}" /> -->
+        <img src="{{tmdb.getTinyPoster(p.profile_path)}}" />
           <div class="nom">{{p.name}}</div>
         </a>
       </mat-card-content>
