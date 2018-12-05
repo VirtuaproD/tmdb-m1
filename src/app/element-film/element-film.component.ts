@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {MovieResponse} from "../tmdb-data/Movie";
+import {TmdbService} from '../tmdb.service';
 
 @Component({
   selector: 'app-element-film',
@@ -9,7 +10,7 @@ import {MovieResponse} from "../tmdb-data/Movie";
 export class ElementFilmComponent implements OnInit {
   @Input() movies: MovieResponse[];
 
-  constructor() {
+  constructor(public tmdb: TmdbService) {
   }
 
   ngOnInit() {

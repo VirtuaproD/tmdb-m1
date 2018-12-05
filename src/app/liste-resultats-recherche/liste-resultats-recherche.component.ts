@@ -3,7 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {TmdbService} from '../tmdb.service';
 import {MovieResult, SearchMovieResponse} from '../tmdb-data/searchMovie';
 import {SearchPeopleResponse} from '../tmdb-data/SearchPeople';
-import {MovieGenre} from '../tmdb-data/Movie';
+import {MovieGenre, MovieResponse} from '../tmdb-data/Movie';
 
 
 export interface FilterElement {
@@ -20,6 +20,7 @@ export class ListeResultatsRechercheComponent implements OnInit {
   currentSearchRes: SearchMovieResponse;
   genresId: FilterElement[];
   currentPeopleSearchRes: SearchPeopleResponse;
+  movieList: MovieResponse[];
   constructor(private routeur: Router,
               private route: ActivatedRoute,
               public tmdb: TmdbService) { }
@@ -34,6 +35,7 @@ export class ListeResultatsRechercheComponent implements OnInit {
 
           this.genresId = [];
           this.currentSearchRes = res;
+          this.movieList = this.currentSearchRes.results as MovieResponse[];
           this.currentSearchRes.results.forEach(result => {
             result.genre_ids.forEach(genre => {
               if (this.genresId.reduce( (acc, g) => {
@@ -72,7 +74,7 @@ export class ListeResultatsRechercheComponent implements OnInit {
           return this.getStateOfFilter(gid) ? true : acc;
         }, false);
 
-    })
+    });
 
     return res;
   }
