@@ -16,7 +16,6 @@ export class ActeursPopulairesComponent implements OnInit {
               private route: ActivatedRoute,
               public tmdb: TmdbService) { }
 
-
   ngOnInit() {
 
     this.tmdb.getPopularPersons().then( res => {
