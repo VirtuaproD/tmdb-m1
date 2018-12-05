@@ -6,6 +6,7 @@ import {SearchMovieQuery, SearchMovieResponse} from './tmdb-data/searchMovie';
 import {SearchPeopleQuery, SearchPeopleResponse} from './tmdb-data/SearchPeople';
 import {TVQuery, TVResponse} from './tmdb-data/TV';
 import {SearchTVQuery, SearchTVResponse} from './tmdb-data/SearchTV';
+import {DiscoverMovieResponse, DiscoverQuery} from './tmdb-data/Discover';
 
 const tmdbApi = 'https://api.themoviedb.org/3';
 type HTTP_METHOD = 'GET' | 'POST' | 'DELETE' | 'PUT';
@@ -76,6 +77,12 @@ export class TmdbService {
   async getMovieGenres(options?: MovieGenreQuery): Promise<MovieGenresResponse> {
     const url = `${tmdbApi}/genre/movie/list`;
     const res = await this.get<MovieGenresResponse>(url, options);
+    return res.body;
+  }
+
+  async getDiscoverMovies(options?: DiscoverQuery): Promise<DiscoverMovieResponse> {
+    const url = `${tmdbApi}/discover/movie`;
+    const res = await this.get<DiscoverMovieResponse>(url, options);
     return res.body;
   }
 
