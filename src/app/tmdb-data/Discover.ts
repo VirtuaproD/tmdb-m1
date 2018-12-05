@@ -8,7 +8,7 @@ export interface DiscoverQuery {
 
 export interface DiscoverMovieResponse {
   page?: number;
-  result?: MovieResult;
+  results?: MovieResult[];
   total_result?: number;
   total_pages?: number;
 
