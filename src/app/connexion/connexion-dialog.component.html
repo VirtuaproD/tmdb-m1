@@ -23,5 +23,8 @@
     </small>
 
   <p><button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">OK</button></p>
-  <p><a>J'ai oublié mon mot de passe</a></p>
+  <p><a (click)="sendPasswordReset(email)">J'ai oublié mon mot de passe</a></p>
+  <small *ngIf="passwordResetSent" class="text-danger">
+    Envoyé à {{email}}.
+  </small>
 </form>

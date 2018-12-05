@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {TmdbService} from './tmdb.service';
-import {MovieResponse} from './tmdb-data/Movie';
+import {MovieGenre, MovieResponse} from './tmdb-data/Movie';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {auth, User} from 'firebase';
 import {Observable} from 'rxjs';
@@ -18,6 +18,8 @@ export class AppComponent {
   private _user: User;
   private dbData: Observable<any>;
 
+  public genres: MovieGenre[];
+
   public sideNavVisible: boolean;
 
   constructor(private tmdb: TmdbService,
@@ -30,6 +32,8 @@ export class AppComponent {
     this.anAuth.user.subscribe(u => {
       this._user = u;
     });
+    this.tmdb.getMovieGenres({language: "fr-FR"}).then(res =>
+      this.genres = res.genres.sort(function(a, b) {return a.name > b.name ? 1 : b.name > a.name ? -1 : 0; }));
   }
 
   get movie(): MovieResponse {

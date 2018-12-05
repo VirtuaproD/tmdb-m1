@@ -8,6 +8,12 @@
       <button mat-fab (click)="sidenav.toggle();" [style.visibility]="user ? 'inherit' : 'hidden'">
         <mat-icon>list</mat-icon>
       </button>
+      <a [routerLink]="['..']"> Accueil </a>
+      <button mat-button [matMenuTriggerFor]="menuGenres">Genres</button>
+      <mat-menu #menuGenres="matMenu" >
+        <a mat-menu-item *ngFor="let g of genres">{{g.name}}</a>
+      </mat-menu>
+
       <app-recherche></app-recherche>
       <button mat-fab style="visibility: hidden"><mat-icon>settings</mat-icon></button>
     </header>
