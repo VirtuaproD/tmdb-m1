@@ -8,33 +8,20 @@
       <div class="actions">
         <app-add-film  [movieId]="movieId"></app-add-film>
       </div>
-      <div>
-          <!--<div class="rating">
-               <a href="#5" title="Donner 5 étoiles">☆</a>
-               <a href="#4" title="Donner 4 étoiles">☆</a>
-               <a href="#3" title="Donner 3 étoiles">☆</a>
-               <a href="#2" title="Donner 2 étoiles">☆</a>
-               <a href="#1" title="Donner 1 étoile">☆</a>
-          </div>-->
-          <div class="note">
-              note : {{movie.vote_average}}
-          </div>
-      </div>
 
-      <div>
-        <!-- ici mettre formulaire laisser un avis -->
+      <div class="note">
+          note : {{movie.vote_average}}
       </div>
-    <!-- ici mettre bouton gauche voir un avis -->
-    <!-- ici mettre bouton droite "ok !" = on submit du form -->
   </div>
-
 
 
   <div class="droite">
       <h1>{{movie.title}}</h1>
       <ul>
-        <li> Année :                    {{movie.release_date.slice(0,4)}} </li>
-        <li> Status :                   {{movie.status}} </li>
+        <li> Année :  {{movie.release_date.slice(0,4)}} </li>
+        <li> Status : {{movie.status}} </li>
+        <li> Revenu : {{movie.revenue | currency:'USD':'symbol':'1.0-0'}} </li>
+        <li> Budget : {{movie.budget | currency:'USD':'symbol':'1.0-0'}}</li>
         <li> Compagnies de production :
             <ng-container *ngFor="let cp of movie.production_companies">
               {{cp.name}} ,
@@ -45,14 +32,12 @@
             {{l.name}}  ,
           </ng-container>
         </li>
-        <li> Revenu :                  {{movie.revenue | currency:'USD':'symbol':'1.0-0'}} </li>
-        <li> Budget : {{movie.budget | currency:'USD':'symbol':'1.0-0'}}</li>
         <li> Acteurs :
             <ng-container *ngFor="let c of cast">
               {{c.name}} ,
             </ng-container>
         </li>
-        <li class="synopsis"> Synopsis :                 {{movie.overview}} </li>
+        <li class="synopsis"> Synopsis : {{movie.overview}} </li>
       </ul>
   </div>
 </div>
