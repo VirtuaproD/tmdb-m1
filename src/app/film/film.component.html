@@ -17,7 +17,7 @@
                <a href="#1" title="Donner 1 étoile">☆</a>
           </div>-->
           <div class="note">
-              note : {{vote_average}}
+              note : {{movie.vote_average}}
           </div>
       </div>
 
@@ -31,28 +31,28 @@
 
 
   <div class="droite">
-      <h1>{{title}}</h1>
+      <h1>{{movie.title}}</h1>
       <ul>
-        <li> Année :                    {{annee.slice(0,4)}} </li>
-        <li> Status :                   {{status}} </li>
+        <li> Année :                    {{movie.release_date.slice(0,4)}} </li>
+        <li> Status :                   {{movie.status}} </li>
         <li> Compagnies de production :
-            <ng-container *ngFor="let cp of compagnies">
+            <ng-container *ngFor="let cp of movie.production_companies">
               {{cp.name}} ,
             </ng-container>
         </li>
         <li> Langues :
-          <ng-container *ngFor="let l of langues">
+          <ng-container *ngFor="let l of movie.spoken_languages">
             {{l.name}}  ,
           </ng-container>
         </li>
-        <li> Revenu :                  {{revenue | currency:'USD':'symbol':'1.0-0'}} </li>
-        <li> Budget : {{budget | currency:'USD':'symbol':'1.0-0'}}</li>
+        <li> Revenu :                  {{movie.revenue | currency:'USD':'symbol':'1.0-0'}} </li>
+        <li> Budget : {{movie.budget | currency:'USD':'symbol':'1.0-0'}}</li>
         <li> Acteurs :
             <ng-container *ngFor="let c of cast">
               {{c.name}} ,
             </ng-container>
         </li>
-        <li class="synopsis"> Synopsis :                 {{synopsis}} </li>
+        <li class="synopsis"> Synopsis :                 {{movie.overview}} </li>
       </ul>
   </div>
 </div>

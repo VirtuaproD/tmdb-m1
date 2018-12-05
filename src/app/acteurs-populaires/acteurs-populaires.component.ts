@@ -12,9 +12,7 @@ export class ActeursPopulairesComponent implements OnInit {
 
   personList: PersonResponse[];
 
-  constructor(private routeur: Router,
-              private route: ActivatedRoute,
-              private tmdb: TmdbService) { }
+  constructor(public tmdb: TmdbService) { }
 
 
   ngOnInit() {
