@@ -19,7 +19,7 @@ export class ListeFilmsGenreComponent implements OnInit {
 
     this.route.paramMap.subscribe((param) => {
       this.genreId = param.get('id');
-      this.tmdb.getDiscoverMovies({language: "fr-FR", with_genres: this.genreId.toString()})
+      this.tmdb.getDiscoverMovies({language: "fr-FR", sort_by: "popularity.desc", with_genres: this.genreId.toString()})
         .then( (res) => {
           this.movies = res;
 
