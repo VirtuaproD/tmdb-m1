@@ -43,7 +43,9 @@ mat-menu button {
   margin-top:20px;
 }
 
-
+a {
+  color: #87CEFA;
+}
 
 
 .Global {

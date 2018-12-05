@@ -29,13 +29,22 @@
         </li>
         <li> Langues :
           <ng-container *ngFor="let l of movie.spoken_languages">
-            {{l.name}}  ,
+            {{l.name}} ,
           </ng-container>
         </li>
         <li> Acteurs :
-            <ng-container *ngFor="let c of cast">
-              {{c.name}} ,
-            </ng-container>
+          <ng-container *ngFor="let c of cast">
+            <a [routerLink]="['/actor/'+c.id]" >
+              {{c.name}}</a>
+            ,
+          </ng-container>
+        </li>
+        <li> Genres :
+          <ng-container *ngFor="let g of movie.genres">
+            <a [routerLink]="['/genre/'+g.id]" >
+              {{g.name}}</a>
+            ,
+          </ng-container>
         </li>
         <li class="synopsis"> Synopsis : {{movie.overview}} </li>
       </ul>
