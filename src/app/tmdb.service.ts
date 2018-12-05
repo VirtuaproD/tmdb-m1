@@ -41,7 +41,7 @@ export class TmdbService {
 
     this.getMovieGenres({language: "fr-FR"}).then(res => {
       this.genres = res.genres;
-    })
+    });
 
     return this;
   }
@@ -88,7 +88,7 @@ export class TmdbService {
 
   }
 
-
+///TODO utiliser discover sur TMDB, créer un nouveau ts dans tmdb-data ?
 
   // _______________________________________________________________________________________________________________________________________
   // Person / People _______________________________________________________________________________________________________________________
