@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {TmdbService} from '../tmdb.service';
+import {MovieGenre} from '../tmdb-data/Movie';
 
 @Component({
   selector: 'app-dashboard',

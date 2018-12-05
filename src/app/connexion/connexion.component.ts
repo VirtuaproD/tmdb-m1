@@ -45,6 +45,7 @@ export class ConnexionDialogComponent {
   public form: FormGroup;
   @Input() email: string;
   @Input() password: string;
+  private passwordResetSent = false;
 
   constructor(
     public authService: AuthService,
@@ -72,6 +73,15 @@ export class ConnexionDialogComponent {
 
   connectWithTwitter() {
     this.anAuth.auth.signInWithPopup(new auth.TwitterAuthProvider());
+  }
+
+  sendPasswordReset(emailAddress: string) {
+    this.anAuth.auth.sendPasswordResetEmail(emailAddress).then(function() {
+      this.passwordResetSent = true;
+    }).catch(function(error) {
+      // An error happened.
+    });
+
   }
 
   onClose(): void {

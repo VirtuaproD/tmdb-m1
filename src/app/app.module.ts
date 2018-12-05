@@ -18,7 +18,8 @@ import {MatButtonModule,
   MatFormFieldModule,
   MatDialogModule,
   MatInputModule,
-  MatMenuModule } from '@angular/material';
+  MatMenuModule,
+  MatChipsModule} from '@angular/material';
 import {MatIconModule} from '@angular/material/icon';
 import { FilmComponent } from './film/film.component';
 import { ListeResultatsRechercheComponent } from './liste-resultats-recherche/liste-resultats-recherche.component';
@@ -92,6 +93,7 @@ const appRoutes: Routes = [
     MatFormFieldModule,
     MatDialogModule,
     MatInputModule,
+    MatChipsModule,
     FormsModule,
     ReactiveFormsModule,
     MatCardModule,

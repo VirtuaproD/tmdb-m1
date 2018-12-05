@@ -17,6 +17,10 @@ mat-sidenav {
   color:white;
 }
 
+mat-menu-item {
+  display:flex;
+}
+
 header {
   display:flex;
   flex-direction: row;
