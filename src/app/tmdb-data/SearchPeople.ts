@@ -1,5 +1,6 @@
 import {MovieResult} from './searchMovie';
 import {TVResult} from './SearchTV';
+import {PersonResponse} from './Person';
 
 export interface SearchPeopleQuery {
   language?: string; // Pass a ISO 639-1 value to display translated data for the fields that support it.
@@ -22,4 +23,9 @@ export interface SearchPeopleResponse {
   }[];
   total_results?: number;
   total_pages?: number;
+}
+
+
+export interface PopularPersonResponse {
+  results?: PersonResponse[];
 }
