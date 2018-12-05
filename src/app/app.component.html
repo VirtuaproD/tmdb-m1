@@ -5,11 +5,13 @@
 
   <mat-sidenav-content>
     <header>
-      <button mat-fab (click)="sidenav.toggle();" [style.visibility]="user ? 'inherit' : 'hidden'">
-        <mat-icon>list</mat-icon>
+      <button mat-fab color="primary" (click)="sidenav.toggle();" [style.visibility]="user ? 'inherit' : 'hidden'">
+        <mat-icon *ngIf="!sidenav.opened">list</mat-icon>
+        <mat-icon *ngIf="sidenav.opened">close</mat-icon>
       </button>
-      <a [routerLink]="['..']"> Accueil </a>
-      <button mat-button [matMenuTriggerFor]="menuGenres">Genres</button>
+
+      <a [routerLink]="['..']"><button mat-fab><mat-icon>home</mat-icon> </button></a>
+      <button mat-stroked-button [matMenuTriggerFor]="menuGenres">Genres</button>
       <mat-menu #menuGenres="matMenu" >
         <a mat-menu-item [routerLink]="['/genre/'+g.id]" *ngFor="let g of genres">{{g.name}}</a>
       </mat-menu>
