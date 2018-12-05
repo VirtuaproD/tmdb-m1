@@ -10,15 +10,16 @@ import {DiscoverMovieResponse} from '../tmdb-data/Discover';
 })
 export class ListeFilmsGenreComponent implements OnInit {
   private genreId: string;
+  public genreName: string;
   public  movies: DiscoverMovieResponse;
 
   constructor(private tmdb: TmdbService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    //this.genreId = this.route.snapshot.paramMap.get('id');
 
     this.route.paramMap.subscribe((param) => {
       this.genreId = param.get('id');
+      this.genreName = this.tmdb.getMovieGenreName(28);
       this.tmdb.getDiscoverMovies({language: "fr-FR", sort_by: "popularity.desc", with_genres: this.genreId.toString()})
         .then( (res) => {
           this.movies = res;

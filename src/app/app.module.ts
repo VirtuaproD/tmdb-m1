@@ -101,6 +101,7 @@ const appRoutes: Routes = [
     MatSidenavModule,
     MatFormFieldModule,
     MatMenuModule,
+    MatChipsModule,
     RouterModule.forRoot(
       appRoutes,
       {enableTracing: false}
