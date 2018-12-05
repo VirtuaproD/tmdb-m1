@@ -99,9 +99,9 @@ export class TmdbService {
     return res.body;
   }
 
-  async getPopularPersons(options?: PersonQuery): Promise<any> {
+  async getPopularPersons(options?: PersonQuery): Promise<PersonResponse[]> {
     const url = `${tmdbApi}/person/popular`;
-    const res = await this.get<any>(url, options);
+    const res = await this.get<PersonResponse[]>(url, options);
     return res.body;
   }
 
