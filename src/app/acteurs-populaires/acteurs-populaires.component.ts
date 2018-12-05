@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {TmdbService} from '../tmdb.service';
-//import {PersonResponse} from '../tmdb-data/Person';
+import {PersonResponse} from "../tmdb-data/Person";
 
 @Component({
   selector: 'app-acteurs-populaires',
@@ -10,7 +10,7 @@ import {TmdbService} from '../tmdb.service';
 })
 export class ActeursPopulairesComponent implements OnInit {
 
-  personList: any;
+  personList: PersonResponse[];
 
   constructor(private routeur: Router,
               private route: ActivatedRoute,
