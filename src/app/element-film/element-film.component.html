@@ -1,0 +1,14 @@
+<li *ngFor="let movie of movies">
+
+  <mat-card *ngIf="movie">
+    <mat-card-content>
+      <a [routerLink]="['/movie/'+movie.id]" >
+        <img src="{{getPath(movie.poster_path)}}" />
+        <div class="title">{{movie.title}}</div>
+      </a>
+      <div class="genres"><ng-container *ngFor="let g of movie.genres">{{g.name}} </ng-container></div>
+      <app-add-film  [movieId]="movie.id"></app-add-film>
+    </mat-card-content>
+  </mat-card>
+
+</li>

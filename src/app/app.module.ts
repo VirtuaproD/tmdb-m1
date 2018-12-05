@@ -40,6 +40,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ListeFilmComponent, DialogDeleteMovieComponent } from './liste-film/liste-film.component';
 import { LogoutComponent } from './logout/logout.component';
 import { AddFilmComponent } from './add-film/add-film.component';
+import { ElementFilmComponent } from './element-film/element-film.component';
+import { ElementActeurComponent } from './element-acteur/element-acteur.component';
+import { ListeFilmsGenreComponent } from './liste-films-genre/liste-films-genre.component';
 
 
 
@@ -49,7 +52,8 @@ const appRoutes: Routes = [
   {path: 'creation-compte', component: CreationCompteComponent},
   {path: 'movie/:id', component: FilmComponent},
   {path: 'list', component: ListeComponent},
-  {path: 'actor/:id', component: ActorComponent}
+  {path: 'actor/:id', component: ActorComponent},
+  {path: 'genre/:id', component: ListeFilmsGenreComponent}
 ];
 
 @NgModule({
@@ -74,7 +78,10 @@ const appRoutes: Routes = [
     ListeFilmComponent,
     DialogDeleteMovieComponent,
     LogoutComponent,
-    AddFilmComponent
+    AddFilmComponent,
+    ElementFilmComponent,
+    ElementActeurComponent,
+    ListeFilmsGenreComponent
   ],
   imports: [
     BrowserModule,

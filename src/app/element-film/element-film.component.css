@@ -1,17 +1,27 @@
-
-ul {
-  list-style: none;
-  padding:0px;
-  margin:0px;
+.actor-info {
+  color:white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
-li {
-  padding:0px;
-  margin:0px;
+.actor-info .picture {
+  width:10vw;
+  margin-right:10vw;
+}
+
+.actor-info .picture img {
+  width:10vw;
+}
+
+.actor-info .infos {
+  width: 10vw;
+  text-align: center;
 }
 
 mat-card {
-  width: 30cm;
+  width: 80%;
   margin:auto;
   margin-bottom:0.2cm;
 }
@@ -19,6 +29,7 @@ mat-card {
 a {
   text-decoration: none;
 }
+
 
 mat-card-content {
   display: flex;
@@ -44,6 +55,12 @@ mat-card-content a .title {
 
 }
 
+.title {
+  width: 40%;
+  font-size: 130%;
+  font-weight: bold;
+}
+
 .genres {
   text-align: right;
   color:white;
@@ -53,20 +70,11 @@ mat-card-content a .title {
   min-width: 120px;
 }
 
-.button_add_list {
-  width:40px;
+h2 {
+  color: white;
+  text-align: center;
 }
 
-
-.filters {
-  width: 30cm;
-  margin:auto;
-  margin-bottom:0.2cm;
-
+ul {
   list-style: none;
-
-  display:flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
 }
