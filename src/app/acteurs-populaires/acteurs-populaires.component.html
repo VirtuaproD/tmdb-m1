@@ -2,7 +2,7 @@
 <h3>Acteurs populaires :</h3>
 
 <ul *ngIf="personList">
-  <li *ngFor="let p of personList.results">
+  <li *ngFor="let p of personList">
     <mat-card>
       <mat-card-content>
         <a [routerLink]="['/actor/'+p.id]" >

@@ -6,6 +6,7 @@ import {SearchMovieQuery, SearchMovieResponse} from './tmdb-data/searchMovie';
 import {SearchPeopleQuery, SearchPeopleResponse} from './tmdb-data/SearchPeople';
 import {TVQuery, TVResponse} from './tmdb-data/TV';
 import {SearchTVQuery, SearchTVResponse} from './tmdb-data/SearchTV';
+import {DiscoverMovieResponse, DiscoverQuery} from './tmdb-data/Discover';
 
 const tmdbApi = 'https://api.themoviedb.org/3';
 type HTTP_METHOD = 'GET' | 'POST' | 'DELETE' | 'PUT';
@@ -79,6 +80,12 @@ export class TmdbService {
     return res.body;
   }
 
+  async getDiscoverMovies(options?: DiscoverQuery): Promise<DiscoverMovieResponse> {
+    const url = `${tmdbApi}/discover/movie`;
+    const res = await this.get<DiscoverMovieResponse>(url, options);
+    return res.body;
+  }
+
   getMovieGenreName(idGenre: number): string {
     const genre: MovieGenre = this.genres.find((g) => {
       return g.id === idGenre;
@@ -99,9 +106,9 @@ export class TmdbService {
     return res.body;
   }
 
-  async getPopularPersons(options?: PersonQuery): Promise<any> {
+  async getPopularPersons(options?: PersonQuery): Promise<PersonResponse[]> {
     const url = `${tmdbApi}/person/popular`;
-    const res = await this.get<any>(url, options);
+    const res = await this.get<PersonResponse[]>(url, options);
     return res.body;
   }
 
