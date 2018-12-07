@@ -4,7 +4,34 @@
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <header>
+    <mat-toolbar>
+      <mat-toolbar-row>
+        <button mat-icon-button (click)="sidenav.toggle();" [style.visibility]="user ? 'inherit' : 'hidden'">
+          <mat-icon *ngIf="!sidenav.opened">list</mat-icon>
+          <mat-icon *ngIf="sidenav.opened">close</mat-icon>
+        </button>
+        <button [routerLink]="['..']" mat-icon-button><mat-icon>home</mat-icon></button>
+        <button mat-stroked-button [matMenuTriggerFor]="menuGenres">Genres</button>
+        <mat-menu #menuGenres="matMenu" >
+          <a mat-menu-item [routerLink]="['/genre/'+g.id]" *ngFor="let g of genres">{{g.name}}</a>
+        </mat-menu>
+        <span class="spacer"></span>
+        <app-recherche></app-recherche>
+        <span class="spacer"></span>
+        <div class="login">
+          <div class="connexion" *ngIf="!user">
+            <app-connexion></app-connexion>
+            <app-creation-compte></app-creation-compte>
+          </div>
+          <div *ngIf="user">
+            <app-logout></app-logout>
+          </div>
+        </div>
+      </mat-toolbar-row>
+    </mat-toolbar>
+
+
+    <!--<header>
       <button mat-fab color="primary" (click)="sidenav.toggle();" [style.visibility]="user ? 'inherit' : 'hidden'">
         <mat-icon *ngIf="!sidenav.opened">list</mat-icon>
         <mat-icon *ngIf="sidenav.opened">close</mat-icon>
@@ -27,7 +54,7 @@
       <div *ngIf="user">
         <app-logout></app-logout>
       </div>
-    </div>
+    </div>-->
 
     <section class="contenu">
       <router-outlet></router-outlet>

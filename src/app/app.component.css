@@ -21,25 +21,24 @@ mat-menu-item {
   display:flex;
 }
 
-header {
-  display:flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding:0.5cm;
-}
+
 
 .login {
   position: absolute;
   right: 0px;
   top: 0px;
-  padding:0.5cm;
+  padding-top:12px;
+  padding-right:5px;
 }
 
-app-connexion {
-  margin-right:0.2cm;
-}
 
 .connexion {
   display:flex;
   flex-direction: row;
+}
+
+
+
+.spacer {
+  flex: 1 1 auto;
 }

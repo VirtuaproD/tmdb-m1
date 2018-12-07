@@ -11,7 +11,8 @@ import {environment} from '../environments/environment';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule,
+import {
+  MatButtonModule,
   MatCheckboxModule,
   MatCardModule,
   MatSidenavModule,
@@ -19,7 +20,8 @@ import {MatButtonModule,
   MatDialogModule,
   MatInputModule,
   MatMenuModule,
-  MatChipsModule} from '@angular/material';
+  MatChipsModule, MatToolbarModule
+} from '@angular/material';
 import {MatIconModule} from '@angular/material/icon';
 import { FilmComponent } from './film/film.component';
 import { ListeResultatsRechercheComponent } from './liste-resultats-recherche/liste-resultats-recherche.component';
@@ -94,6 +96,7 @@ const appRoutes: Routes = [
     MatDialogModule,
     MatInputModule,
     MatChipsModule,
+    MatToolbarModule,
     FormsModule,
     ReactiveFormsModule,
     MatCardModule,

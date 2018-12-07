@@ -1,15 +1,20 @@
-#searchBar {
+.example-full-width {
+  width: 30vw;
+  margin-right:10px;
+}
+
+/*#searchBar {
   border-radius: 10px 0 0 10px;
   padding:0.2cm;
   font-size:0.8cm;
   width:30vw;
   color:black;
 }
-button {
+/*button {
   border-radius: 0 10px 10px 0;
   padding:0.2cm;
   padding-left:0.5cm;
   padding-right:0.5cm;
   font-size:0.8cm;
   color:black;
-}
+}*/
