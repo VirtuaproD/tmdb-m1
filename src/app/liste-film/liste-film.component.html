@@ -1,16 +1,23 @@
-<mat-card [routerLink]="['/movie/'+movie.id]" >
+<mat-card >
   <div class="actionButtons">
     <button mat-icon-button (click)="deleteMovie()"><mat-icon>delete</mat-icon></button>
   </div>
-  <img src="{{getPath()}}" />
 
-  <mat-card-header>
-    <mat-card-title>{{movie.title}} - <span *ngFor="let g of movie.genres">{{g.name}} </span></mat-card-title>
-  </mat-card-header>
+
+  <a routerLink="/movie/{{movie.id}}">
+    <img src="{{getPath()}}" />
+
+      <mat-card-title>{{movie.title}}</mat-card-title>
+
 
     <mat-card-content>
         <p>Année : {{movie.release_date.slice(0,4)}}</p>
         <p>Status : {{movie.status}}</p>
-        <p>Synopsis : {{movie.overview}} <a routerLink="/movie/{{movie.id}}">(Voir le détail)</a></p>
+        <p>Synopsis : {{movie.overview}}</p>
     </mat-card-content>
+  </a>
+
+  <mat-chip-list class="mat-chip-list-stacked">
+    <mat-chip [routerLink]="['/genre/'+g.id]" *ngFor="let g of movie.genres">{{g.name}} </mat-chip>
+  </mat-chip-list>
 </mat-card>

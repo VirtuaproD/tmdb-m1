@@ -38,35 +38,3 @@
   </mat-sidenav-content>
 </mat-sidenav-container>
 
-
-
-
-
-<!--Laissé à titre d'exemple
-TODO : a supprimer d'ici la fin du projet
-<h1>TMDB + Firebase</h1>
-<nav *ngIf="user">
-  <label>{{user.displayName}}</label>
-  <img [src]="user.photoURL" />
-  <button (click)="logout()">Déconnection</button>
-  {{user.uid}}
-</nav>
-<nav *ngIf="!user">
-  <button (click)="login()">Connection via Google</button>
-</nav>
-
-<hr/>
-<pre *ngIf="lists">
-  {{lists | async | json}}
-</pre>
-
-<hr/>
-<section *ngIf="movie">
-  <img [src]="getPath(movie.poster_path)" />
-  <pre>{{movie | json}}</pre>
-</section>
-<section *ngIf="!movie">
-  Pas encore de films à afficher...
-</section>
-
--->
