@@ -1,4 +1,11 @@
 <h1 *ngIf="genreName">{{genreName}}</h1>
+<div class="sort">
+  Popularité :
+  <button mat-mini-fab (click)="changeSort()">
+    <mat-icon *ngIf="!sortdesc">arrow_downward</mat-icon>
+    <mat-icon *ngIf="sortdesc">arrow_upward</mat-icon>
+  </button>
+</div>
 <ul *ngIf="movies">
   <app-element-film [movies]="movies.results"></app-element-film>
 </ul>

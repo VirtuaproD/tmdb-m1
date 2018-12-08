@@ -5,7 +5,6 @@ import {AngularFireAuth} from '@angular/fire/auth';
 import {auth, User} from 'firebase';
 import {Observable} from 'rxjs';
 import {AngularFireDatabase} from '@angular/fire/database';
-import {filter} from 'rxjs/operators';
 import {Router} from '@angular/router';
 
 @Component({
@@ -25,7 +24,7 @@ export class AppComponent {
   constructor(private tmdb: TmdbService,
               public anAuth: AngularFireAuth,
               private db: AngularFireDatabase,
-              private router: Router
+              private router: Router,
               ) {
     this.sideNavVisible = false;
     tmdb.init('25ea93320b0ede2eb2ce7b2661886a0e');
@@ -67,5 +66,8 @@ export class AppComponent {
     this.sideNavVisible = !this.sideNavVisible;
     console.log(this.sideNavVisible);
   }
+
+  goPrevious() {
+    window.history.back();
+  }
 }
-// /yE5d3BUhE8hCnkMUJOo1QDoOGNz.jpg

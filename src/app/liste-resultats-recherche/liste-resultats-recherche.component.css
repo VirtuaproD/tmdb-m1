@@ -3,15 +3,18 @@ ul {
   list-style: none;
   padding:0px;
   margin:0px;
+  max-width: 1000px;
+  margin:auto;
 }
 
 li {
   padding:0px;
   margin:0px;
+  max-width: 1000px;
 }
 
 mat-card {
-  width: 30cm;
+  max-width: 1000px;
   margin:auto;
   margin-bottom:0.2cm;
 }

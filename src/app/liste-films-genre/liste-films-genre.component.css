@@ -1,7 +1,17 @@
 ul {
   list-style: none;
+  padding:0px;
+  max-width: 1000px;
+  margin:auto;
 }
 
 h1 {
   text-align: center;
+}
+
+.sort {
+  text-align: right;
+  max-width: 1000px;
+  margin:auto;
+  margin-bottom:0.2cm;
 }

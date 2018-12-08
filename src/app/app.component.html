@@ -11,6 +11,7 @@
           <mat-icon *ngIf="sidenav.opened">close</mat-icon>
         </button>
         <button [routerLink]="['..']" mat-icon-button><mat-icon>home</mat-icon></button>
+        <button (click)="goPrevious()" mat-icon-button><mat-icon>arrow_back</mat-icon></button>
         <button mat-stroked-button [matMenuTriggerFor]="menuGenres">Genres</button>
         <mat-menu #menuGenres="matMenu" >
           <a mat-menu-item [routerLink]="['/genre/'+g.id]" *ngFor="let g of genres">{{g.name}}</a>

@@ -77,4 +77,7 @@ h2 {
 
 ul {
   list-style: none;
+  padding:0px;
+  max-width: 1000px;
+  margin:auto;
 }
