@@ -62,11 +62,9 @@ mat-card-content a .title {
 
 
 .filters {
-  width: 30cm;
+  max-width: 1000px;
   margin:auto;
   margin-bottom:0.2cm;
-
-  list-style: none;
 
   display:flex;
   flex-direction: row;

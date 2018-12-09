@@ -1,6 +1,12 @@
 
+
+
 <ul class="filters">
-  <li *ngFor="let g of genresId"><mat-checkbox [(ngModel)]="g.selected">{{tmdb.getMovieGenreName(g.genreId)}}</mat-checkbox></li>
+  <mat-chip *ngFor="let g of genresId" color="primary" [selected]="g.selected" (click)="g.selected = !g.selected">
+    <mat-icon *ngIf="g.selected">done</mat-icon>
+    <mat-icon *ngIf="!g.selected">close</mat-icon>
+    {{tmdb.getMovieGenreName(g.genreId)}}
+  </mat-chip>
 </ul>
 
 
