@@ -20,8 +20,8 @@
       <ul>
         <li> Année :  {{movie.release_date.slice(0,4)}} </li>
         <li> Status : {{movie.status}} </li>
-        <li> Revenu : {{movie.revenue | currency:'USD':'symbol':'1.0-0'}} </li>
-        <li> Budget : {{movie.budget | currency:'USD':'symbol':'1.0-0'}}</li>
+        <li *ngIf="movie.revenue > 0"> Revenu : {{movie.revenue | currency:'USD':'symbol':'1.0-0'}} </li>
+        <li *ngIf="movie.budget > 0"> Budget : {{movie.budget | currency:'USD':'symbol':'1.0-0'}}</li>
         <li> Compagnies de production :
             <ng-container *ngFor="let cp of movie.production_companies">
               {{cp.name}} ,
@@ -40,11 +40,12 @@
           </ng-container>
         </li>
         <li> Genres :
-          <ng-container *ngFor="let g of movie.genres">
-            <a [routerLink]="['/genre/'+g.id]" >
-              {{g.name}}</a>
-            ,
-          </ng-container>
+          <mat-chip-list style="display:inline-block">
+            <mat-chip *ngFor="let g of movie.genres" [routerLink]="['/genre/'+g.id]" >
+              {{g.name}}
+            </mat-chip>
+          </mat-chip-list>
+
         </li>
         <li class="synopsis"> Synopsis : {{movie.overview}} </li>
       </ul>
