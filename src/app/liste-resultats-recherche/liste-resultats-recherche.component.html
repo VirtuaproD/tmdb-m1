@@ -1,29 +1,47 @@
 
 
 
-<ul class="filters">
-  <mat-chip *ngFor="let g of genresId" color="primary" [selected]="g.selected" (click)="g.selected = !g.selected">
-    <mat-icon *ngIf="g.selected">done</mat-icon>
-    <mat-icon *ngIf="!g.selected">close</mat-icon>
-    {{tmdb.getMovieGenreName(g.genreId)}}
-  </mat-chip>
-</ul>
+<div class="container">
+  <mat-tab-group>
+    <mat-tab label="Films">
+      <h1>Films</h1>
+
+      <ul class="filters">
+        <mat-chip *ngFor="let g of genresId" color="primary" [selected]="g.selected" (click)="g.selected = !g.selected">
+          <mat-icon *ngIf="g.selected">done</mat-icon>
+          <mat-icon *ngIf="!g.selected">close</mat-icon>
+          {{tmdb.getMovieGenreName(g.genreId)}}
+        </mat-chip>
+      </ul>
+
+      <ng-template *ngIf="currentSearchRes"></ng-template>
+      <ul *ngIf="currentSearchRes">
+        <app-element-film [movies]="filterResults(currentSearchRes)"></app-element-film>
+      </ul>
+    </mat-tab>
+    <mat-tab label="Personnes">
+      <h1>Personnes</h1>
+      <ul *ngIf="currentPeopleSearchRes">
+
+        <li *ngFor="let p of currentPeopleSearchRes.results">
+          <a routerLink="/actor/{{p.id}}">
+            <mat-card>
+              <mat-card-header>
+                {{p.name}}
+              </mat-card-header>
+            </mat-card>
+          </a>
+        </li>
+
+      </ul>
+    </mat-tab>
+  </mat-tab-group>
 
 
-<ul *ngIf="currentSearchRes">
-  <app-element-film [movies]="filterResults(currentSearchRes)"></app-element-film>
 
 
-  <li *ngFor="let p of currentPeopleSearchRes.results">
-    <a routerLink="/actor/{{p.id}}">
-      <mat-card>
-        <mat-card-header>
-          {{p.name}}
-        </mat-card-header>
-      </mat-card>
-    </a>
-  </li>
+</div>
 
-</ul>
+
 
 

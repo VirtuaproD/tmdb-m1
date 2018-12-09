@@ -5,11 +5,11 @@
         <img src="{{getPath(movie.poster_path)}}" />
         <div class="title">{{movie.title}}</div>
       </a>
-      <mat-chip-list *ngIf="movie.genre_ids"  class="mat-chip-list-stacked">
+      <mat-chip-list *ngIf="movie.genre_ids"  class="genres mat-chip-list-stacked">
           <mat-chip *ngFor="let g of movie.genre_ids" [routerLink]="['/genre/'+g]" style="cursor:pointer">{{tmdb.getMovieGenreName(g)}}</mat-chip>
       </mat-chip-list>
 
-      <mat-chip-list *ngIf="movie.genres"  class="mat-chip-list-stacked">
+      <mat-chip-list *ngIf="movie.genres"  class="genres mat-chip-list-stacked">
         <mat-chip *ngFor="let g of movie.genres" [routerLink]="['/genre/'+g.id]" style="cursor:pointer">{{g.name}}</mat-chip>
       </mat-chip-list>
       <app-add-film  [movieId]="movie.id"></app-add-film>

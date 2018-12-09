@@ -20,7 +20,7 @@ import {
   MatDialogModule,
   MatInputModule,
   MatMenuModule,
-  MatChipsModule, MatToolbarModule
+  MatChipsModule, MatToolbarModule, MatTabsModule
 } from '@angular/material';
 import {MatIconModule} from '@angular/material/icon';
 import { FilmComponent } from './film/film.component';
@@ -97,6 +97,7 @@ const appRoutes: Routes = [
     MatInputModule,
     MatChipsModule,
     MatToolbarModule,
+    MatTabsModule,
     FormsModule,
     ReactiveFormsModule,
     MatCardModule,

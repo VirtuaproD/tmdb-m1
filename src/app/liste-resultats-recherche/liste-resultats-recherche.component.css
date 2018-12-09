@@ -1,10 +1,15 @@
+.container {
+  max-width: 1000px;
+  margin:auto;
+}
+
 
 ul {
   list-style: none;
   padding:0px;
   margin:0px;
-  max-width: 1000px;
-  margin:auto;
+  /*max-width: 1000px;*/
+  /*margin:auto;*/
 }
 
 li {
