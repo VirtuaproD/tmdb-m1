@@ -76,3 +76,23 @@ mat-card-content a .title {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
+.person {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+
+}
+
+.person .title {
+  font-size: 130%;
+  font-weight: bold;
+  margin-left:20px;
+}
+
+
+.person img {
+  width: 92px;
+  height: 123px;
+}

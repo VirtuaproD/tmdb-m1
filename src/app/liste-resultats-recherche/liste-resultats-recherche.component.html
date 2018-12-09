@@ -26,9 +26,10 @@
         <li *ngFor="let p of currentPeopleSearchRes.results">
           <a routerLink="/actor/{{p.id}}">
             <mat-card>
-              <mat-card-header>
-                {{p.name}}
-              </mat-card-header>
+              <mat-card-content class="person">
+                <img src="{{tmdb.getProfilePoster(p.profile_path)}}" />
+                <div class="title">{{p.name}}</div>
+              </mat-card-content>
             </mat-card>
           </a>
         </li>

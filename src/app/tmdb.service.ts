@@ -95,7 +95,7 @@ export class TmdbService {
 
   }
 
-///TODO utiliser discover sur TMDB, créer un nouveau ts dans tmdb-data ?
+
 
   // _______________________________________________________________________________________________________________________________________
   // Person / People _______________________________________________________________________________________________________________________
@@ -128,6 +128,14 @@ export class TmdbService {
     const url = `${tmdbApi}/person/${id}/movie_credits`;
     const res = await this.get<PersonCreditResponse>(url, options);
     return res.body;
+  }
+
+  getProfilePoster(s: string): string {
+    if (s) {
+      return "https://image.tmdb.org/t/p/w92/" + s;
+    } else {
+      return "/assets/mockup_neutral_profile.jpg";
+    }
   }
 
   // _______________________________________________________________________________________________________________________________________
